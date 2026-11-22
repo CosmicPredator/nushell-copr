@@ -2,7 +2,7 @@
 %global __strip /bin/true
 
 Name:           nushell
-Version:        0.0.0
+Version:        0.117.0
 Release:        1%{?dist}
 Summary:        A new type of shell (prebuilt upstream binary)
 License:        MIT
@@ -46,5 +46,8 @@ fi
 %{_bindir}/nu*
 
 %changelog
+* Sun Nov 22 2026 GitHub Actions <actions@github.com> - 0.117.0-1
+- Update to 0.117.0
+
 * Sun Nov 22 2026 Cosmic Predator <cosmicpredator@proton.me> - 0.0.0-1
 - Initial package
