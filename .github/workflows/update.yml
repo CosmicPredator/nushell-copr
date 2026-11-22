@@ -55,7 +55,7 @@ jobs:
         run: |
           mkdir -p ~/.config
           echo "$COPR_CONFIG" > ~/.config/copr
-          copr-cli build YOUR_COPR_USERNAME/nushell ~/rpmbuild/SRPMS/*.src.rpm
+          copr-cli build cosmicpredator/nushell ~/rpmbuild/SRPMS/*.src.rpm
 
       - name: Commit spec
         if: steps.ver.outputs.update == 'true'

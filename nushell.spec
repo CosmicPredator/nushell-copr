@@ -46,5 +46,5 @@ fi
 %{_bindir}/nu*
 
 %changelog
-* Sun Nov 22 2026 Your Name <you@example.com> - 0.0.0-1
+* Sun Nov 22 2026 Cosmic Predator <cosmicpredator@proton.me> - 0.0.0-1
 - Initial package
