@@ -35,9 +35,12 @@ jobs:
       - name: Bump spec
         if: steps.ver.outputs.update == 'true'
         run: |
+          # make sure the file ends with a newline so the changelog entry is not glued to the last line
+          sed -i -e '$a\' nushell.spec
           rpmdev-bumpspec -n "${{ steps.ver.outputs.latest }}" \
             -c "Update to ${{ steps.ver.outputs.latest }}" \
             -u "GitHub Actions <actions@github.com>" nushell.spec
+          tail -n 5 nushell.spec
 
       - name: Build SRPM
         if: steps.ver.outputs.update == 'true'
@@ -52,7 +55,7 @@ jobs:
         run: |
           mkdir -p ~/.config
           echo "$COPR_CONFIG" > ~/.config/copr
-          copr-cli build cosmicpredator/nushell ~/rpmbuild/SRPMS/*.src.rpm
+          copr-cli build YOUR_COPR_USERNAME/nushell ~/rpmbuild/SRPMS/*.src.rpm
 
       - name: Commit spec
         if: steps.ver.outputs.update == 'true'
