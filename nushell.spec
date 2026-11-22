@@ -43,7 +43,8 @@ fi
 
 %files
 %license LICENSE
-%{_bindir}/nu
-%{_bindir}/nu_plugin_*
+%{_bindir}/nu*
 
 %changelog
+* Sun Nov 22 2026 Your Name <you@example.com> - 0.0.0-1
+- Initial package
